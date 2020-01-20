@@ -1,0 +1,50 @@
+.loading{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(173, 173, 173,0.5);
+    .circle1,.circle2{
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+    }
+    .circle1{
+        width: 100px;
+        height: 100px;
+        background: transparent;
+        border-top: 10px solid rgb(57, 232, 255);
+        border-bottom: 10px solid rgb(219, 255, 57);
+        border-left:10px solid transparent;
+        border-right:10px solid transparent;
+        animation: ClockwiseRotation 1.5s linear infinite;
+    }
+    .circle2{
+        width: 150px;
+        height: 150px;
+        background: transparent;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left:10px solid rgb(80, 255, 57);
+        border-right:10px solid rgb(255, 57, 156);
+        animation: AntiClockwiseRotation 2s linear infinite;
+    }
+}
+@keyframes ClockwiseRotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes AntiClockwiseRotation{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}

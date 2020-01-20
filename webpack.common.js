@@ -10,7 +10,7 @@ module.exports = {
     },
     output: {
         filename: devMode ? './js/[name].js' : './js/[name].[contenthash].js', //輸出檔案名稱
-        path: path.resolve(__dirname, 'dist'), //輸出位址
+        path: path.resolve(__dirname, devMode ? 'dist' : 'build'), //輸出位址
         publicPath: ''
     },
     plugins: [
@@ -40,17 +40,35 @@ module.exports = {
                 test: /\.(sa|sc)ss$/,
                 use: [
                     {
-                        //把css字串從js抽離出來
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: devMode
-                        }
+                        loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader
                     },
                     {
                         loader: 'css-loader'
                     },
                     {
-                        loader: 'sass-loader'
+                        loader: 'sass-loader',
+                        options: {
+                            //prependData:`@import "${path.resolve(__dirname,'src/scss/index.scss')}";`
+                        }
+                    },
+                    {
+                        loader: 'sass-resources-loader', //共用scss檔
+                        options: {
+                            resources: './src/scss/index.scss'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            publicPath: devMode ? '/asset/images/' : '/build/asset/images',
+                            outputPath: 'asset/images/'
+                        }
                     }
                 ]
             }

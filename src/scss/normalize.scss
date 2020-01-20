@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color:$fontcolorWhite;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+body{
+    background: $backgroundBlack;
+}
+p{
+    font-size: 21px;
+}
+h1{
+    font-size: 40px;
+    padding: 0 10px;
+}
+h2{
+    font-size: 32px;
+    padding: 0 10px;
+}
+h3{
+    font-size: 28px;
+    padding: 0 10px;
+}
+h4{
+    font-size: 23px;
+    padding: 0 10px;
+}

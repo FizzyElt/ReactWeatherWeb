@@ -1,12 +1,13 @@
 import reactDOM from 'react-dom'
 import React from 'react';
-import './style.scss'
+import Home from './View/Home.jsx'
+import './scss/normalize.scss'
 const App = () => {
     return (
-        <div>
-           {a}
-        </div>
+        <>
+            <Home/>
+        </>
     );
 }
 
-reactDOM.render(<App/>,document.getElementById('app'))
+reactDOM.render(<App />, document.getElementById('app'))

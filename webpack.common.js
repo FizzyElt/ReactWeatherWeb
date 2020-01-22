@@ -36,6 +36,17 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: devMode ? 'style-loader' : MiniCssExtractPlugin.loader
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
+            },
             {  //sass、scss
                 test: /\.(sa|sc)ss$/,
                 use: [

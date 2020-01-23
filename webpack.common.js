@@ -1,7 +1,9 @@
 const path = require('path')
 const HtmlWebapckPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 const devMode = process.env.NODE_ENV === 'development' //模式判斷
 
 module.exports = {
@@ -95,6 +97,8 @@ module.exports = {
                     chunks: 'all'  //所有都抽取出來
                 }
             }
-        }
+        },
+        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]
+
     }
 }

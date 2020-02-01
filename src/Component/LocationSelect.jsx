@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Cascader } from 'antd/es'
+import { Cascader,Select } from 'antd/es'
 
 //Context
 import { LocationContext } from '../Context/locationContext.js'
 
+const {Option} = Select
+//城市列表
 const options = [
     {
         value: '宜蘭縣',
@@ -96,16 +98,25 @@ const options = [
     },
 ]
 
+
+//選擇城市
 const LocationSelect = () => {
 
-    const { currentLocation, setLocation } = useContext(LocationContext);
+    const { currentLocation, setLocation, dataFetching } = useContext(LocationContext);
 
     const onChange = value => {
+
         setLocation(value)
     }
 
     return (
-        <Cascader options={options} value={[currentLocation]} onChange={onChange} />
+        <Select value={currentLocation} style={{width:"100px"}} onChange={onChange} disabled={dataFetching}>
+            {
+                options.map((name,i)=>(
+                <Option value={name.value} key={i}>{name.value}</Option>
+                ))
+            }
+        </Select>
     );
 }
 

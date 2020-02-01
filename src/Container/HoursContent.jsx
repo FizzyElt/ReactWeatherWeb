@@ -33,7 +33,6 @@ const HoursContent = () => {
                 </ContentTitle>
                 <HoursWeather />
             </div>
-
         </Content>
     );
 }

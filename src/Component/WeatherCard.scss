@@ -1,0 +1,41 @@
+.weather-card {
+  margin: 10px auto;
+  padding: 20px 15px;
+  width: 300px;
+  min-height: 300px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px 1px #4d4d4d;
+  img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0px auto 30px auto;
+  }
+  .icon {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  h4 {
+    display: flex;
+    border-radius: 6px;
+    align-items: center;
+    text-align: left;
+    line-height: 1.5;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  h4:first-of-type{
+    display: block;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+  h4:hover {
+    color: #ffce47;
+    background-color: #004353;
+  }
+  h5{
+    margin: 0;
+  }
+}

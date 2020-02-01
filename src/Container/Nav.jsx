@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Layout from 'antd/lib/layout/layout'
-import {Typography} from 'antd/es'
+import { Typography } from 'antd/es'
 import { TiWeatherSunny } from 'react-icons/ti' //icon
 import './Nav.scss'
 
 const { Header } = Layout
-const {Title} = Typography
+const { Title } = Typography
 
 const Nav = () => {
 

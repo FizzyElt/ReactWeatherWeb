@@ -9,6 +9,7 @@ import HoursContent from '../Container/HoursContent.jsx'
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
 
+const { Footer } = Layout
 const Home = () => {
 
     const [currentLocation, setCurrentLocation] = useState(defaultLocation);
@@ -22,19 +23,21 @@ const Home = () => {
         }}>
             <Layout>
                 <Nav />
-                <HashRouter>
-                    <Switch>
-                        <Route exact path="/">
-                            <Redirect to={"/36hours"} />
-                        </Route>
-                        <Route path="/36hours">
-                            <HoursContent />
-                        </Route>
-                        <Route path="/week/:location">
+                <Layout>
+                    <HashRouter>
+                        <Switch>
+                            <Route exact path="/">
+                                <Redirect to={"/36hours"} />
+                            </Route>
+                            <Route path="/36hours">
+                                <HoursContent />
+                            </Route>
+                            <Route path="/week/:location">
 
-                        </Route>
-                    </Switch>
-                </HashRouter>
+                            </Route>
+                        </Switch>
+                    </HashRouter>
+                </Layout>
             </Layout>
         </LocationContext.Provider>
     );

@@ -4,7 +4,8 @@ import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 
 //component
 import Nav from '../Container/Nav.jsx'
-import HoursContent from '../Container/HoursContent.jsx'
+import HoursContainer from '../Container/HoursContainer.jsx'
+import FooterContainer from '../Container/FooterContainer.jsx'
 
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
@@ -30,7 +31,7 @@ const Home = () => {
                                 <Redirect to={"/36hours"} />
                             </Route>
                             <Route path="/36hours">
-                                <HoursContent />
+                                <HoursContainer />
                             </Route>
                             <Route path="/week/:location">
 
@@ -38,6 +39,7 @@ const Home = () => {
                         </Switch>
                     </HashRouter>
                 </Layout>
+                <FooterContainer/>
             </Layout>
         </LocationContext.Provider>
     );

@@ -9,12 +9,12 @@ import { LocationContext } from '../Context/locationContext.js'
 import Layout from 'antd/lib/layout/layout'
 import { Row, Col } from 'antd/lib/grid'
 import { Typography } from 'antd/es'
-import './HoursContent.scss'
+import './HoursContainer.scss'
 
 const { Content } = Layout
 const { Title } = Typography
 
-const HoursContent = () => {
+const HoursContainer = () => {
     const { currentLocation } = useContext(LocationContext);
 
     return (
@@ -37,4 +37,4 @@ const HoursContent = () => {
     );
 }
 
-export default HoursContent;
+export default HoursContainer;

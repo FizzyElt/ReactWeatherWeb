@@ -1,0 +1,25 @@
+.footer-container{
+    display: block;
+    padding: 20px 25px 0px 25px;
+    background-color: #001529;
+    color: #797979;
+    h5{
+        font-size: 18px;
+        color: #797979;
+    }
+    .link-list{
+        display: flex;
+        li{
+            margin-right: 30px;
+        }
+        
+        .icon{
+            transition: color 200ms;
+            font-size: 25px;
+            color: #797979;
+        }
+        .icon:hover{
+            color: #2bd5ff;
+        }
+    }
+}

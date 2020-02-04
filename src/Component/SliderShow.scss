@@ -1,0 +1,73 @@
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  .card {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+
+    transition: all 0.5s;
+  }
+  .show-middle {
+    z-index: 2;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .active-right {
+    z-index: 1;
+    transform: translateX(80%) scale(0.8);
+
+    opacity: 0.6;
+  }
+  .active-left {
+    z-index: 1;
+    transform: translateX(-80%) scale(0.8);
+    opacity: 0.6;
+  }
+  .hidden-right {
+    z-index: 1;
+    transform: translateX(160%) scale(0.6);
+    opacity: 0;
+  }
+  .hidden-left {
+    z-index: 1;
+    transform: translateX(-160%) scale(0.6);
+    opacity: 0;
+  }
+  .switch-btn {
+    position: absolute;
+    padding: 10px 20px;
+    width: 100%;
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    > button {
+      cursor: pointer;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      border: none;
+      background-color: rgba($color: #000000, $alpha: 0.6);
+      color: #ffffff;
+      font-size: 30px;
+      transition: transform 0.3s;
+      outline: none;
+    }
+    > button:hover {
+      transform: scale(1.1);
+    }
+  }
+}

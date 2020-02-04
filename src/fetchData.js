@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Token } from './apiToken.js'
 
 const hoursUrl = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001`
-
+const weekUrl='https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?elementName=Td'
 export const getHoursData = (location) => {
     /**
      * {
@@ -48,6 +48,22 @@ export const getHoursData = (location) => {
             resolve(dataFormater(res.data.records.location[0].weatherElement))
         }).catch((err) => {
             console.log('get error')
+            reject(err)
+        })
+    })
+}
+
+export const getWeekData=(location)=>{
+    return new Promise((resolve,reject)=>{
+        axios.get(weekUrl,{
+            params:{
+                locationName: location,
+                Authorization:Token
+            }
+        }).then(res=>{
+            resolve(res)
+        }).catch((err)=>{
+            console.log("get error")
             reject(err)
         })
     })

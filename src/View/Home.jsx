@@ -6,7 +6,7 @@ import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 import Nav from '../Container/Nav.jsx'
 import HoursContainer from '../Container/HoursContainer.jsx'
 import FooterContainer from '../Container/FooterContainer.jsx'
-
+import WeekContainer from '../Container/WeekContainer.jsx'
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
 
@@ -15,6 +15,7 @@ const Home = () => {
 
     const [currentLocation, setCurrentLocation] = useState(defaultLocation);
     const [dataFetching, setDataFetching] = useState(false);
+    
     return (
         <LocationContext.Provider value={{
             currentLocation,
@@ -33,8 +34,8 @@ const Home = () => {
                             <Route path="/36hours">
                                 <HoursContainer />
                             </Route>
-                            <Route path="/week/:location">
-
+                            <Route path="/week">
+                                <WeekContainer/>
                             </Route>
                         </Switch>
                     </HashRouter>

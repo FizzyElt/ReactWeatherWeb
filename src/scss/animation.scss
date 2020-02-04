@@ -1,22 +1,26 @@
 .animate-fade-enter {
   opacity: 0;
- transform: scale(0.8) translateY(50px);
+  -moz-transform: scale(0.8) translateY(50px);
+  -webkit-transform: scale(0.8) translateY(50px);
 }
 .animate-fade-enter-active {
   opacity: 1;
-  transform: scale(1) translateY(0);
-  transition: opacity 500ms linear 300ms,
-  transform 500ms ease-in-out 300ms;
+  -moz-transform: scale(1) translateY(0);
+  -webkit-transform: scale(1) translateY(0);
+  -webkit-transition: opacity 500ms linear, transform 500ms ease-in-out;
+  -moz-transition: opacity 500ms linear, transform 500ms ease-in-out;
 }
 .animate-fade-exit {
   opacity: 1;
-  transform: scale(1) translateY(0px);
+  -moz-transform: scale(1) translateY(0);
+  -webkit-transform: scale(1) translateY(0);
 }
 .animate-fade-exit-active {
   opacity: 0;
-  transform: scale(0.8) translateY(50px);
-  transition: opacity 300ms, 
-              transform 300ms ease-in-out;
+  -moz-transform: scale(0.8) translateY(50px);
+  -webkit-transform: scale(0.8) translateY(50px);
+  -webkit-transition: opacity 200ms, transform 200ms ease-in-out;
+  -moz-transition: opacity 200ms, transform 200ms ease-in-out;
 }
 .my-node-enter {
   opacity: 0;
@@ -32,12 +36,10 @@
   opacity: 0;
   transition: opacity 200ms;
 }
-.card-rotate-enter{
-
-    transform: rotateY(0);
+.card-rotate-enter {
+  transform: rotateY(0);
 }
-.card-rotate-enter-active{
-   
-    transform: rotateY(360deg);
-    transition:transform 1000ms;
+.card-rotate-enter-active {
+  transform: rotateY(360deg);
+  transition: transform 1000ms;
 }

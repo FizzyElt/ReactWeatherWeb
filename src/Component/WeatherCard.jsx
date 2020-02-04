@@ -1,7 +1,7 @@
 import React from 'react';
 import './WeatherCard.scss'
 import { FaUmbrella, FaTemperatureLow, FaCloudSun } from 'react-icons/fa'
-import PropsTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import '../scss/animation.scss'
 
 
@@ -33,13 +33,13 @@ const WeatherCard = ({
 }
 
 WeatherCard.propTypes = {
-    startTime: PropsTypes.string.isRequired,
-    endTime: PropsTypes.string.isRequired,
-    PoP: PropsTypes.string.isRequired,
-    Wx: PropsTypes.object.isRequired,
-    MinT: PropsTypes.string.isRequired,
-    MaxT: PropsTypes.string.isRequired,
-    CI: PropsTypes.string.isRequired
+    startTime: PropTypes.string.isRequired,
+    endTime: PropTypes.string.isRequired,
+    PoP: PropTypes.string.isRequired,
+    Wx: PropTypes.object.isRequired,
+    MinT: PropTypes.string.isRequired,
+    MaxT: PropTypes.string.isRequired,
+    CI: PropTypes.string.isRequired
 }
 
 export default WeatherCard;

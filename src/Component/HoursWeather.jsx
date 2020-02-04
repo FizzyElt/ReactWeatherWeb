@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Row, Col } from 'antd/lib/grid'
 
-import Loading from '../Component/Loading.jsx'
-import WeatherCard from '../Component/WeatherCard.jsx'
+import Loading from './Loading.jsx'
+import WeatherCard from './WeatherCard.jsx'
 
 import { LocationContext } from '../Context/locationContext.js'
 import { getHoursData } from '../fetchData.js'
 
-import { CSSTransition, TransitionGroup, SwitchTransition, Transition } from 'react-transition-group'
+import { CSSTransition, SwitchTransition} from 'react-transition-group'
 import '../scss/animation.scss'
 
 
@@ -29,9 +29,11 @@ const HoursWeather = () => {
     const list = data.map((obj, i) => {
         return (
             <Col span={8} key={i} >
-                <CSSTransition in={!dataFetching} classNames="animate-fade" timeout={800} appear>
-                    <WeatherCard {...obj} key={i} />
-                </CSSTransition>
+                <SwitchTransition>
+                    <CSSTransition key={dataFetching?"false":"true"} classNames="animate-fade" timeout={500} appear>
+                        <WeatherCard {...obj} />
+                    </CSSTransition>
+                </SwitchTransition>
             </Col>
         );
     })

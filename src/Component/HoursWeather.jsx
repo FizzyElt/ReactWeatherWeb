@@ -20,6 +20,7 @@ const HoursWeather = () => {
         setLoading(true)
         getHoursData(currentLocation).then(res => {
             setData(res)
+            console.log(res)
             setLoading(false)
         }).catch(err => {
             setLoading(false)

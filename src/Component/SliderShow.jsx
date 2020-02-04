@@ -54,7 +54,6 @@ const SliderShow = ({ children, height="500px" }) => {
                 return prev + 1
             }
         })
-
     }
     function prevHandler() {
         setShowNum((prev) => {

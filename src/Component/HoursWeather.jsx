@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Row, Col } from 'antd/lib/grid'
 
 import Loading from './Loading.jsx'
-import WeatherCard from './WeatherCard.jsx'
+import HoursWeatherCard from './HoursWeatherCard.jsx'
 
 import { LocationContext } from '../Context/locationContext.js'
 import { getHoursData } from '../fetchData.js'
@@ -20,7 +20,6 @@ const HoursWeather = () => {
         setLoading(true)
         getHoursData(currentLocation).then(res => {
             setData(res)
-            console.log(res)
             setLoading(false)
         }).catch(err => {
             setLoading(false)
@@ -32,7 +31,7 @@ const HoursWeather = () => {
             <Col span={8} key={i} >
                 <SwitchTransition>
                     <CSSTransition key={dataFetching?"false":"true"} classNames="animate-fade" timeout={500} appear>
-                        <WeatherCard {...obj} />
+                        <HoursWeatherCard {...obj} />
                     </CSSTransition>
                 </SwitchTransition>
             </Col>

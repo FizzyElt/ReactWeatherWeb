@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd/lib/grid'
 
-import { GoMarkGithub, } from 'react-icons/go'
 import { FaMedium, FaGithub, FaFacebookSquare, FaLinkedin } from 'react-icons/fa'
 import './FooterContainer.scss'
 

@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef, cloneElement, Children } from 'react';
 
+import PropTypes from 'prop-types'
+
 import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io'
 import './SliderShow.scss'
 
-const SliderShow = ({ children, height="500px" }) => {
+const SliderShow = ({ children, height="500px" ,loading}) => {
 
     const [items, setItems] = useState([]);
-    const itemCount = useRef(Children.count(children) - 1)
+    const itemCount = Children.count(children) - 1
     const [showNum, setShowNum] = useState(0);
 
 
@@ -36,7 +38,7 @@ const SliderShow = ({ children, height="500px" }) => {
             return classname
         }
 
-        if (itemCount.current > 0) {
+        if (itemCount> 1) {
             let list = Children.map(children, (item, i) => {    //將子項目加工過後再render
                 const classNames = classNameCheck(i, showNum)
                 const props = { ...item.props, classNames: classNames }
@@ -45,10 +47,10 @@ const SliderShow = ({ children, height="500px" }) => {
             setItems(list)
         }
 
-    }, [showNum])
+    }, [showNum,loading])
     function nextHandler() {
         setShowNum((prev) => {
-            if (prev === itemCount.current) {
+            if (prev === itemCount) {
                 return prev
             } else {
                 return prev + 1
@@ -79,5 +81,11 @@ function Item({ classNames, children }) {
         {children}
     </div>)
 }
+
+SliderShow.propsTypes={
+    height:PropTypes.string
+}
+
+
 SliderShow.Item = Item
 export default SliderShow;

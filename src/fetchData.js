@@ -62,7 +62,7 @@ export const getWeekData = (location) => {
          *  MaxT:"30",   最高溫 C
          *  MinAT,       最低體感溫度
          *  MaxAT,       最高體感溫度
-         *  UVI,         紫外線指數
+         *  RH,          相對溼度
          *  Wx:{         天氣狀況
          *     name:"",
          *     value:""

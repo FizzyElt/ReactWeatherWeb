@@ -30,7 +30,7 @@ const HoursWeather = () => {
         return (
             <Col span={8} key={i} >
                 <SwitchTransition>
-                    <CSSTransition key={dataFetching?"false":"true"} classNames="animate-fade" timeout={500} appear>
+                    <CSSTransition key={dataFetching?"false":"true"} classNames="animate-fade" timeout={500}>
                         <HoursWeatherCard {...obj} />
                     </CSSTransition>
                 </SwitchTransition>

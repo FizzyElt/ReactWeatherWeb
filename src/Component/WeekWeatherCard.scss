@@ -1,7 +1,15 @@
 .week-weather-card{
-    min-height: 300px;
+    position: relative;
     width: 320px;
+    background-color: #ffffff;
     border-radius: 8px;
-    border: 1px solid #727272;
-    
+    padding: 20px 10px;
+    img{
+        display: block;
+        margin: 10px auto 30px auto;
+    }
+    h4{
+        font-size: 20px;
+        text-align: left;
+    }
 }

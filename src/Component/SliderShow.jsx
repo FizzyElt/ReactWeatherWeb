@@ -2,18 +2,17 @@ import React, { useState, useEffect, useRef, cloneElement, Children } from 'reac
 
 import PropTypes from 'prop-types'
 
-import {IoIosArrowBack,IoIosArrowForward} from 'react-icons/io'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import './SliderShow.scss'
 
-const SliderShow = ({ children, height="500px" ,loading}) => {
+const SliderShow = ({ children, height = "500px" }) => {
 
     const [items, setItems] = useState([]);
-    const itemCount = Children.count(children) - 1
-    const [showNum, setShowNum] = useState(0);
+    const itemCount = useRef(Children.count(children) - 1)
+    const [showNum,setShowNum] = useState(0);
 
 
     useEffect(() => {
-        console.log("render")
         function classNameCheck(index, current) { //class切換
             let classname = ""
             switch (index) {
@@ -38,7 +37,7 @@ const SliderShow = ({ children, height="500px" ,loading}) => {
             return classname
         }
 
-        if (itemCount> 1) {
+        if (itemCount.current > -1) {
             let list = Children.map(children, (item, i) => {    //將子項目加工過後再render
                 const classNames = classNameCheck(i, showNum)
                 const props = { ...item.props, classNames: classNames }
@@ -47,10 +46,10 @@ const SliderShow = ({ children, height="500px" ,loading}) => {
             setItems(list)
         }
 
-    }, [showNum,loading])
+    }, [showNum])
     function nextHandler() {
         setShowNum((prev) => {
-            if (prev === itemCount) {
+            if (prev === itemCount.current) {
                 return prev
             } else {
                 return prev + 1
@@ -67,12 +66,13 @@ const SliderShow = ({ children, height="500px" ,loading}) => {
         })
     }
     return (
-        <div className="slider-container" style={{height:height}}>
+        <div className="slider-container" style={{ height: height }}>
             {items}
             <div className="switch-btn">
-                <button onClick={() => prevHandler()}><IoIosArrowBack/></button>
-                <button onClick={() => nextHandler()}><IoIosArrowForward/></button>
+                <button onClick={() => prevHandler()}><IoIosArrowBack /></button>
+                <button onClick={() => nextHandler()}><IoIosArrowForward /></button>
             </div>
+            <div className="current-number">{showNum + 1}/{itemCount.current + 1}</div>
         </div>
     );
 }
@@ -82,8 +82,8 @@ function Item({ classNames, children }) {
     </div>)
 }
 
-SliderShow.propsTypes={
-    height:PropTypes.string
+SliderShow.propsTypes = {
+    height: PropTypes.string
 }
 
 

@@ -15,18 +15,18 @@ const Home = () => {
 
     const [currentLocation, setCurrentLocation] = useState(defaultLocation);
     const [dataFetching, setDataFetching] = useState(false);
-    
+
     return (
         <LocationContext.Provider value={{
             currentLocation,
             dataFetching,
             setLocation: (name) => { setCurrentLocation(name) },
             setLoading: (value) => { setDataFetching(value) }
-        }}>
-            <Layout>
-                <Nav />
+        }}><HashRouter>
                 <Layout>
-                    <HashRouter>
+                    <Nav />
+                    <Layout>
+
                         <Switch>
                             <Route exact path="/">
                                 <Redirect to={"/36hours"} />
@@ -35,13 +35,14 @@ const Home = () => {
                                 <HoursContainer />
                             </Route>
                             <Route path="/week">
-                                <WeekContainer/>
+                                <WeekContainer />
                             </Route>
                         </Switch>
-                    </HashRouter>
+
+                    </Layout>
+                    <FooterContainer />
                 </Layout>
-                <FooterContainer/>
-            </Layout>
+            </HashRouter>
         </LocationContext.Provider>
     );
 }

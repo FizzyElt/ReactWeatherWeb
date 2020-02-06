@@ -2,7 +2,6 @@ import React from 'react';
 
 
 import ContentTitle from '../Component/ContentTitle.jsx'
-import SliderShow from '../Component/SliderShow.jsx'
 import WeekWeather from '../Component/WeekWeather.jsx'
 
 import Layout from 'antd/lib/layout/layout'

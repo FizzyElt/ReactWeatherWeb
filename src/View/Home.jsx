@@ -7,10 +7,11 @@ import Nav from '../Container/Nav.jsx'
 import HoursContainer from '../Container/HoursContainer.jsx'
 import FooterContainer from '../Container/FooterContainer.jsx'
 import WeekContainer from '../Container/WeekContainer.jsx'
+import About from '../Container/About.jsx'
+
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
 
-const { Footer } = Layout
 const Home = () => {
 
     const [currentLocation, setCurrentLocation] = useState(defaultLocation);
@@ -36,6 +37,9 @@ const Home = () => {
                             </Route>
                             <Route path="/week">
                                 <WeekContainer />
+                            </Route>
+                            <Route path="/about">
+                                <About />
                             </Route>
                         </Switch>
 

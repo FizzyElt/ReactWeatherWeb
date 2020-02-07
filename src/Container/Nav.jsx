@@ -16,22 +16,23 @@ const Nav = () => {
 
     return (
         <Header className="nav">
-
             <div className="title">
                 <TiWeatherSunny className="icon" />
                 <Title level={2} className="title">氣象網</Title>
             </div>
-
             <Menu
                 theme="dark"
                 mode="horizontal"
-                defaultSelectedKeys={location.pathname}
+                selectedKeys={[location.pathname]}
                 className="menu">
                 <Menu.Item key={"/36hours"}>
                     <Link to={"/36hours"}>36小時</Link>
                 </Menu.Item>
                 <Menu.Item key={"/week"}>
                     <Link to={"/week"}>一周天氣</Link>
+                </Menu.Item>
+                <Menu.Item key={"/about"}>
+                    <Link to={"/about"}>關於</Link>
                 </Menu.Item>
             </Menu>
         </Header>

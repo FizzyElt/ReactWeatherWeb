@@ -13,6 +13,8 @@ const { Header } = Layout
 const { Title } = Typography
 const { SubMenu } = Menu
 
+const navItems = [{ path: "/36hours", name: "36小時" }, { path: "/week", name: "一周天氣" }, { path: "/about", name: "關於" }]
+
 const Nav = () => {
     const location = useLocation()
     const { isMobile } = useContext(DeviceWidthContext)
@@ -20,34 +22,18 @@ const Nav = () => {
         <Header className="nav">
             <div className="title">
                 <TiWeatherSunny className="icon" />
-                <Title level={isMobile?3:2} className="title">氣象網</Title>
+                <Title level={isMobile ? 3 : 2} className="title">氣象網</Title>
             </div>
             <Menu
                 theme="dark"
                 mode="horizontal"
                 selectedKeys={[location.pathname]}
                 className="menu">
-                {isMobile ? (<SubMenu title={<FaBars />}>
-                    <Menu.Item key={"/36hours"}>
-                        <Link to={"/36hours"}>36小時</Link>
-                    </Menu.Item>
-                    <Menu.Item key={"/week"}>
-                        <Link to={"/week"}>一周天氣</Link>
-                    </Menu.Item>
-                    <Menu.Item key={"/about"}>
-                        <Link to={"/about"}>關於</Link>
-                    </Menu.Item>
-                </SubMenu>) :
-                    <><Menu.Item key={"/36hours"}>
-                        <Link to={"/36hours"}>36小時</Link>
-                    </Menu.Item>
-                        <Menu.Item key={"/week"}>
-                            <Link to={"/week"}>一周天氣</Link>
-                        </Menu.Item>
-                        <Menu.Item key={"/about"}>
-                            <Link to={"/about"}>關於</Link>
-                        </Menu.Item></>
-                }
+                {isMobile ? <SubMenu title={<FaBars />}>
+                    {navItems.map((item) => <Menu.Item key={item.path}><Link to={item.path}>{item.name}</Link></Menu.Item>)}
+                </SubMenu> :
+                    navItems.map((item) => <Menu.Item key={item.path}><Link to={item.path}>{item.name}</Link></Menu.Item>)}
+
             </Menu>
         </Header>
     );

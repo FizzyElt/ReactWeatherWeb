@@ -5,3 +5,8 @@
     padding: 0;
     min-height: calc(100vh - 60px - 70px);
 }
+@media screen and (max-width:450px){
+    .week-container{
+        width:100%;
+    }
+}

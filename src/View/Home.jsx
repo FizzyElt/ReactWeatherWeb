@@ -11,6 +11,7 @@ import About from '../Container/About.jsx'
 
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
+import { DeviceWidthContext, defaultWidth } from '../Context/deviceWidthContext.js'
 
 const Home = () => {
 
@@ -23,30 +24,35 @@ const Home = () => {
             dataFetching,
             setLocation: (name) => { setCurrentLocation(name) },
             setLoading: (value) => { setDataFetching(value) }
-        }}><HashRouter>
-                <Layout>
-                    <Nav />
+        }}>
+            <DeviceWidthContext.Provider value={{
+                isMobile: defaultWidth < 400
+            }}>
+                <HashRouter>
                     <Layout>
+                        <Nav />
+                        <Layout>
 
-                        <Switch>
-                            <Route exact path="/">
-                                <Redirect to={"/36hours"} />
-                            </Route>
-                            <Route path="/36hours">
-                                <HoursContainer />
-                            </Route>
-                            <Route path="/week">
-                                <WeekContainer />
-                            </Route>
-                            <Route path="/about">
-                                <About />
-                            </Route>
-                        </Switch>
+                            <Switch>
+                                <Route exact path="/">
+                                    <Redirect to={"/36hours"} />
+                                </Route>
+                                <Route path="/36hours">
+                                    <HoursContainer />
+                                </Route>
+                                <Route path="/week">
+                                    <WeekContainer />
+                                </Route>
+                                <Route path="/about">
+                                    <About />
+                                </Route>
+                            </Switch>
 
+                        </Layout>
+                        <FooterContainer />
                     </Layout>
-                    <FooterContainer />
-                </Layout>
-            </HashRouter>
+                </HashRouter>
+            </DeviceWidthContext.Provider>
         </LocationContext.Provider>
     );
 }

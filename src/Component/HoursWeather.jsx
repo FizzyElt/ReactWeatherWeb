@@ -5,15 +5,17 @@ import Loading from './Loading.jsx'
 import HoursWeatherCard from './HoursWeatherCard.jsx'
 
 import { LocationContext } from '../Context/locationContext.js'
+import { DeviceWidthContext } from '../Context/deviceWidthContext.js'
 import { getHoursData } from '../fetchData.js'
 
-import { CSSTransition, SwitchTransition} from 'react-transition-group'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import '../scss/animation.scss'
 
 
 
 const HoursWeather = () => {
     const { currentLocation, dataFetching, setLoading } = useContext(LocationContext);
+    const { isMobile } = useContext(DeviceWidthContext)
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -26,20 +28,36 @@ const HoursWeather = () => {
         })
     }, [currentLocation]);
 
-    const list = data.map((obj, i) => {
-        return (
-            <Col span={8} key={i} >
-                <SwitchTransition>
-                    <CSSTransition key={dataFetching?"false":"true"} classNames="animate-fade" timeout={500}>
-                        <HoursWeatherCard {...obj} />
-                    </CSSTransition>
-                </SwitchTransition>
-            </Col>
-        );
-    })
+    const list = (() => {
+        if (isMobile) {
+            return data.map((obj, i) => {
+                return (
+                    <Row type='flex' key={i} >
+                        <SwitchTransition>
+                            <CSSTransition key={dataFetching ? "false" : "true"} classNames="animate-fade" timeout={500}>
+                                <HoursWeatherCard {...obj} />
+                            </CSSTransition>
+                        </SwitchTransition>
+                    </Row>
+                );
+            })
+        } else {
+            return data.map((obj, i) => {
+                return (
+                    <Col span={8} key={i} >
+                        <SwitchTransition>
+                            <CSSTransition key={dataFetching ? "false" : "true"} classNames="animate-fade" timeout={500}>
+                                <HoursWeatherCard {...obj} />
+                            </CSSTransition>
+                        </SwitchTransition>
+                    </Col>
+                );
+            })
+        }
+    })()
 
     return (
-        <Row type="flex">
+        <Row type="flex" justify='center'>
             {list}
         </Row>
     );

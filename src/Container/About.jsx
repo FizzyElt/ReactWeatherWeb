@@ -36,7 +36,9 @@ const About = () => {
                 作品原始碼連結
            </Title>
            <Title level={4}>
-                <a href="https://github.com/FizzyElt/ReactWeatherWeb">https://github.com/FizzyElt/ReactWeatherWeb</a>
+                <a href="https://github.com/FizzyElt/ReactWeatherWeb">
+                     https://github.com/FizzyElt/ReactWeatherWeb
+                     </a>
            </Title>
        </Typography>
     );

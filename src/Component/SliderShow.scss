@@ -69,3 +69,36 @@
     bottom: 0;
   }
 }
+@media screen and (max-width:450px){
+  .slider-container{
+    .card.active-right {
+
+      transform: translateX(10%) scale(0.8);
+  
+      opacity: 0.6;
+    }
+    .card.active-left {
+
+      transform: translateX(-10%) scale(0.8);
+      opacity: 0.6;
+    }
+    .card.hidden-right {
+
+      transform: translateX(20%) scale(0.6);
+      opacity: 0;
+    }
+    .card.hidden-left {
+
+      transform: translateX(-20%) scale(0.6);
+      opacity: 0;
+    }
+    .switch-btn.prev{
+      bottom:0;
+      left: 10px;
+    }
+    .switch-btn.next{
+      bottom:0;
+      right: 10px;
+    }
+  }
+}

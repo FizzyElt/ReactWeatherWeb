@@ -26,7 +26,7 @@ const Home = () => {
             setLoading: (value) => { setDataFetching(value) }
         }}>
             <DeviceWidthContext.Provider value={{
-                isMobile: defaultWidth < 400
+                isMobile: defaultWidth < 450
             }}>
                 <HashRouter>
                     <Layout>

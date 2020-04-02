@@ -5,7 +5,6 @@ import ContentTitle from '../Component/ContentTitle.jsx'
 import WeekWeather from '../Component/WeekWeather.jsx'
 
 import Layout from 'antd/lib/layout/layout'
-import { Col } from 'antd/lib/grid'
 import './WeekContainer.scss'
 const { Content } = Layout
 

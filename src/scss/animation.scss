@@ -9,11 +9,13 @@
   -webkit-transform: scale(1) translateY(0);
   -webkit-transition: opacity 500ms linear, transform 500ms ease-in-out;
   -moz-transition: opacity 500ms linear, transform 500ms ease-in-out;
+  transition-delay: 0.4s;
 }
 .animate-fade-exit {
   opacity: 1;
   -moz-transform: scale(1) translateY(0);
   -webkit-transform: scale(1) translateY(0);
+
 }
 .animate-fade-exit-active {
   opacity: 0;
@@ -22,6 +24,8 @@
   -webkit-transition: opacity 200ms, transform 200ms ease-in-out;
   -moz-transition: opacity 200ms, transform 200ms ease-in-out;
 }
+
+
 .my-node-enter {
   opacity: 0;
 }

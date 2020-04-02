@@ -1,14 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Row, Col } from 'antd/lib/grid'
 
-import Loading from './Loading.jsx'
 import HoursWeatherCard from './HoursWeatherCard.jsx'
 
 import { LocationContext } from '../Context/locationContext.js'
 import { DeviceWidthContext } from '../Context/deviceWidthContext.js'
 import { getHoursData } from '../fetchData.js'
 
-import { CSSTransition, SwitchTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 import '../scss/animation.scss'
 
 
@@ -25,6 +24,7 @@ const HoursWeather = () => {
             setLoading(false)
         }).catch(err => {
             setLoading(false)
+            console.error(err)
         })
     }, [currentLocation]);
 
@@ -33,11 +33,13 @@ const HoursWeather = () => {
             return data.map((obj, i) => {
                 return (
                     <Row type='flex' key={i} >
-                        <SwitchTransition>
-                            <CSSTransition key={dataFetching ? "false" : "true"} classNames="animate-fade" timeout={500}>
-                                <HoursWeatherCard {...obj} />
-                            </CSSTransition>
-                        </SwitchTransition>
+                        <CSSTransition
+                            in={!dataFetching}
+                            appear={false}
+                            classNames="animate-fade"
+                            timeout={1000}>
+                            <HoursWeatherCard {...obj} />
+                        </CSSTransition>
                     </Row>
                 );
             })
@@ -45,11 +47,13 @@ const HoursWeather = () => {
             return data.map((obj, i) => {
                 return (
                     <Col span={8} key={i} >
-                        <SwitchTransition>
-                            <CSSTransition key={dataFetching ? "false" : "true"} classNames="animate-fade" timeout={500}>
-                                <HoursWeatherCard {...obj} />
-                            </CSSTransition>
-                        </SwitchTransition>
+                        <CSSTransition
+                            in={!dataFetching}
+                            appear={false}
+                            classNames={"animate-fade"}
+                            timeout={1000}>
+                            <HoursWeatherCard {...obj} />
+                        </CSSTransition>
                     </Col>
                 );
             })

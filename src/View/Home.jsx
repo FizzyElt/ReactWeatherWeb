@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import Layout from 'antd/lib/layout/layout'
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 
@@ -16,7 +16,7 @@ import { DeviceWidthContext, defaultWidth } from '../Context/deviceWidthContext.
 const Home = () => {
 
     const [currentLocation, setCurrentLocation] = useState(defaultLocation);
-    const [dataFetching, setDataFetching] = useState(false);
+    const [dataFetching, setDataFetching] = useState(true);
 
     return (
         <LocationContext.Provider value={{
@@ -32,7 +32,6 @@ const Home = () => {
                     <Layout>
                         <Nav />
                         <Layout>
-
                             <Switch>
                                 <Route exact path="/">
                                     <Redirect to={"/36hours"} />

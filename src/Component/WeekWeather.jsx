@@ -44,7 +44,6 @@ const WeekWeather = () => {
             </CSSTransition>}
         </TransitionGroup>
     )
-
 }
 
 export default WeekWeather;

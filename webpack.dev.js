@@ -6,7 +6,7 @@ module.exports = merge(common, {
     mode: 'development',
     devtool: 'source-map',
     devServer: {
-        host:"192.168.43.211",
+        host:"127.0.0.1",
         compress: true,
         contentBase: path.resolve(__dirname, 'dist'),
         noInfo: true,

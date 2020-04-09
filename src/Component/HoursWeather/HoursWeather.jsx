@@ -3,12 +3,12 @@ import { Row, Col } from 'antd/lib/grid'
 
 import HoursWeatherCard from './HoursWeatherCard.jsx'
 
-import { LocationContext } from '../Context/locationContext.js'
-import { DeviceWidthContext } from '../Context/deviceWidthContext.js'
-import { getHoursData } from '../fetchData.js'
+import { LocationContext } from '../../Context/locationContext.js'
+import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
+import { getHoursData } from '../../fetchData.js'
 
 import { CSSTransition } from 'react-transition-group'
-import '../scss/animation.scss'
+import '../../scss/animation.scss'
 
 
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import { Link, useLocation } from 'react-router-dom'
 
-import { DeviceWidthContext } from '../Context/deviceWidthContext.js'
+import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 import Layout from 'antd/lib/layout/layout'
 import { Typography, Menu } from 'antd/es'
 import { TiWeatherSunny } from 'react-icons/ti' //icon

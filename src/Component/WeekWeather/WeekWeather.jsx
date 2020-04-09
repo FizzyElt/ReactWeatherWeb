@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 
-import SliderShow from './SliderShow.jsx'
+import SliderShow from '../Slider/SliderShow.jsx'
 import WeekWeatherCard from './WeekWeatherCard.jsx'
-import Loading from './Loading.jsx'
+import Loading from '../Loading/Loading.jsx'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
-import { LocationContext } from '../Context/locationContext.js'
+import { LocationContext } from '../../Context/locationContext.js'
 
-import { getWeekData } from '../fetchData.js'
+import { getWeekData } from '../../fetchData.js'
 
-import '../scss/animation.scss'
+import '../../scss/animation.scss'
 
 const WeekWeather = () => {
 

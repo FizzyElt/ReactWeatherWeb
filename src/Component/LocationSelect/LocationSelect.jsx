@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Cascader,Select } from 'antd/es'
 
 //Context
-import { LocationContext } from '../Context/locationContext.js'
+import { LocationContext } from '../../Context/locationContext.js'
 
 const {Option} = Select
 //城市列表

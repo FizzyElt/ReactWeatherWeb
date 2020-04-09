@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Row, Col } from 'antd/lib/grid'
 
-import { DeviceWidthContext } from '../Context/deviceWidthContext.js'
+import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 
 import { FaMedium, FaGithub, FaFacebookSquare, FaLinkedin } from 'react-icons/fa'
 import './FooterContainer.scss'
@@ -21,22 +21,22 @@ const FooterContainer = () => {
         <Row>
             <ul className="link-list">
                 <li>
-                    <a href="https://www.facebook.com/profile.php?id=100000329620566">
+                    <a href="https://www.facebook.com/profile.php?id=100000329620566" target="_blank">
                         <FaFacebookSquare className="icon" />
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/FizzyElt">
+                    <a href="https://github.com/FizzyElt" target="_blank">
                         <FaGithub className="icon" />
                     </a>
                 </li>
                 <li>
-                    <a href="https://medium.com/@a0979150560">
+                    <a href="https://medium.com/@a0979150560" target="_blank">
                         <FaMedium className="icon" />
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/%E6%9F%8F%E9%8A%93-%E7%B4%A2-49668819a/">
+                    <a href="https://www.linkedin.com/in/%E6%9F%8F%E9%8A%93-%E7%B4%A2-49668819a/" target="_blank">
                         <FaLinkedin className="icon" />
                     </a>
                 </li>
@@ -53,22 +53,22 @@ const FooterContainer = () => {
             <Col span={4}>
                 <ul className="link-list">
                     <li>
-                        <a href="https://www.facebook.com/profile.php?id=100000329620566">
+                        <a href="https://www.facebook.com/profile.php?id=100000329620566" target="_blank">
                             <FaFacebookSquare className="icon" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/FizzyElt">
+                        <a href="https://github.com/FizzyElt" target="_blank">
                             <FaGithub className="icon" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://medium.com/@a0979150560">
+                        <a href="https://medium.com/@a0979150560" target="_blank">
                             <FaMedium className="icon" />
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/%E6%9F%8F%E9%8A%93-%E7%B4%A2-49668819a/">
+                        <a href="https://www.linkedin.com/in/%E6%9F%8F%E9%8A%93-%E7%B4%A2-49668819a/" target="_blank">
                             <FaLinkedin className="icon" />
                         </a>
                     </li>

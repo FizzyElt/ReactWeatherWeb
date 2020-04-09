@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-import ContentTitle from '../Component/ContentTitle.jsx'
-import WeekWeather from '../Component/WeekWeather.jsx'
+import ContentTitle from '../../Component/ContentTitle/ContentTitle.jsx'
+import WeekWeather from '../../Component/WeekWeather/WeekWeather.jsx'
 
 import Layout from 'antd/lib/layout/layout'
 import './WeekContainer.scss'

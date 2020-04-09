@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 import { FaUmbrella, FaTemperatureLow, FaCloudSun } from 'react-icons/fa'
-import '../scss/animation.scss'
+import '../../scss/animation.scss'
 import './HoursWeatherCard.scss'
 
 const numFormater = (num = "0") => {    //10以下補0

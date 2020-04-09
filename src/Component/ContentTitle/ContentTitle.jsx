@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types'
 
 //component
-import LocationSelect from './LocationSelect.jsx'
+import LocationSelect from '../LocationSelect/LocationSelect.jsx'
 
 //context
-import { LocationContext } from '../Context/locationContext.js'
-import { DeviceWidthContext } from '../Context/deviceWidthContext.js'
+import { LocationContext } from '../../Context/locationContext.js'
+import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 
 //layout
 import { Row, Col } from 'antd/lib/grid'

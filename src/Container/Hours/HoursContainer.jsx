@@ -1,8 +1,8 @@
 import React from 'react';
 
 //component
-import ContentTitle from '../Component/ContentTitle.jsx'
-import HoursWeather from '../Component/HoursWeather.jsx'
+import ContentTitle from '../../Component/ContentTitle/ContentTitle.jsx'
+import HoursWeather from '../../Component/HoursWeather/HoursWeather.jsx'
 
 //layout
 import Layout from 'antd/lib/layout/layout'

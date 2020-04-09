@@ -3,11 +3,11 @@ import Layout from 'antd/lib/layout/layout'
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 
 //component
-import Nav from '../Container/Nav.jsx'
-import HoursContainer from '../Container/HoursContainer.jsx'
-import FooterContainer from '../Container/FooterContainer.jsx'
-import WeekContainer from '../Container/WeekContainer.jsx'
-import About from '../Container/About.jsx'
+import Nav from '../Container/Nav/Nav.jsx'
+import HoursContainer from '../Container/Hours/HoursContainer.jsx'
+import FooterContainer from '../Container/Footer/FooterContainer.jsx'
+import WeekContainer from '../Container/Week/WeekContainer.jsx'
+import About from '../Container/About/About.jsx'
 
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'

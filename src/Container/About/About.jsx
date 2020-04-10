@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Typography ,Divider} from 'antd/es'
 import './About.scss'
-const { Title, Paragraph, Text } = Typography
+const { Title } = Typography
 const About = () => {
     return (
        <Typography className="about-container">

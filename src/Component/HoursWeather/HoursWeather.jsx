@@ -50,7 +50,7 @@ const HoursWeather = () => {
                         <CSSTransition
                             in={!dataFetching}
                             appear={false}
-                            classNames={"animate-fade"}
+                            classNames="animate-fade"
                             timeout={1000}>
                             <HoursWeatherCard {...obj} />
                         </CSSTransition>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 
 import SliderShow from '../Slider/SliderShow.jsx'
@@ -7,43 +7,34 @@ import Loading from '../Loading/Loading.jsx'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import { LocationContext } from '../../Context/locationContext.js'
+import { WeekData } from '../../Context/weekDataContext.js'
 
-import { getWeekData } from '../../fetchData.js'
 
 import '../../scss/animation.scss'
 
 const WeekWeather = () => {
 
-    const { currentLocation, dataFetching, setLoading } = useContext(LocationContext)
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        setLoading(true)
-        getWeekData(currentLocation)
-            .then((res) => {
-                setData(res)
-                setLoading(false)
-            }).catch((err) => {
-                setLoading(false)
-            })
-    }, [currentLocation])
+    const { dataFetching } = useContext(LocationContext)
+    const { data } = useContext(WeekData)
+
+
     const list = data.map((obj, i) => {
         return (<SliderShow.Item key={i}>
             <WeekWeatherCard {...obj} />
         </SliderShow.Item>)
     })
-    return (
-        <TransitionGroup component={null} exit={false}>
-            {data.length>0&&!dataFetching?
-            (<CSSTransition classNames="animate-fade" timeout={800} key={!dataFetching}>
-                <SliderShow>
-                    {list}
-                </SliderShow>
-            </CSSTransition>):
-            <CSSTransition timeout={0} key={!dataFetching}>
-                <Loading/>
-            </CSSTransition>}
-        </TransitionGroup>
-    )
+    if (data.length>0) {
+        return (
+            <CSSTransition classNames="fade-up" appear={false} timeout={1000} in={!dataFetching}>
+            <SliderShow>
+                {list}
+            </SliderShow>
+            </CSSTransition>)
+    }else{
+        return null
+    }
+
+
 }
 
 export default WeekWeather;

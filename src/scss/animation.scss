@@ -26,24 +26,26 @@
 }
 
 
-.my-node-enter {
+.fade-up-enter{
   opacity: 0;
+  transform: translateY(60px);
+ 
 }
-.my-node-enter-active {
+
+.fade-up-enter-active{
   opacity: 1;
-  transition: opacity 200ms;
+  transform: translateY(0px);
+  transition: opacity 500ms linear,
+              transform 500ms ease-in-out;
+  transition-delay: 0.3s;
 }
-.my-node-exit {
+.fade-up-exit{
   opacity: 1;
+  transform: translateY(0px);
+  
 }
-.my-node-exit-active {
+.fade-up-exit-active{
   opacity: 0;
-  transition: opacity 200ms;
-}
-.card-rotate-enter {
-  transform: rotateY(0);
-}
-.card-rotate-enter-active {
-  transform: rotateY(360deg);
-  transition: transform 1000ms;
+  transform: translateY(60px);
+  transition: opacity 300ms linear,transform 300ms ease-in-out;
 }

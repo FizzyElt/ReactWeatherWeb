@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef, cloneElement, Children } from 'react';
+import React, { useState, cloneElement, Children } from 'react';
 
 import PropTypes from 'prop-types'
 
-import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import './SliderShow.scss'
 
@@ -40,57 +39,57 @@ function useSliderShow(children, showNum) {
             const props = { ...item.props, classNames: classNames }
             return cloneElement(item, props)
         })
-        items=list
+        items = list
     }
 
-        return { items, itemCount }
+    return { items, itemCount }
 }
 
 
-    const SliderShow = ({ children, height = "500px" }) => {
+const SliderShow = ({ children, height = "500px" }) => {
 
-        const [showNum, setShowNum] = useState(0);
-        const { items, itemCount } = useSliderShow(children, showNum)
+    const [showNum, setShowNum] = useState(0);
+    const { items, itemCount } = useSliderShow(children, showNum)
 
-        function nextHandler() {
-            setShowNum((prev) => {
-                if (prev === itemCount) {
-                    return prev
-                } else {
-                    return prev + 1
-                }
-            })
-        }
-        function prevHandler() {
-            setShowNum((prev) => {
-                if (prev === 0) {
-                    return prev
-                } else {
-                    return prev - 1
-                }
-            })
-        }
-        return (
-            <div className="slider-container" style={{ height: height }}>
-                {items}
-                <button className="switch-btn prev" onClick={() => prevHandler()}><FaAngleLeft /></button>
-                <button className="switch-btn next" onClick={() => nextHandler()}><FaAngleRight /></button>
-                <div className="current-number">{showNum + 1}/{itemCount + 1}</div>
-            </div>
-        );
+    function nextHandler() {
+        setShowNum((prev) => {
+            if (prev === itemCount) {
+                return prev
+            } else {
+                return prev + 1
+            }
+        })
     }
-
-    //子項目
-    function Item({ classNames, children }) {
-        return (<div className={"card " + classNames}>
-            {children}
-        </div>)
+    function prevHandler() {
+        setShowNum((prev) => {
+            if (prev === 0) {
+                return prev
+            } else {
+                return prev - 1
+            }
+        })
     }
+    return (
+        <div className="slider-container" style={{ height: height }}>
+            {items}
+            <button className="switch-btn prev" onClick={() => prevHandler()}><FaAngleLeft /></button>
+            <button className="switch-btn next" onClick={() => nextHandler()}><FaAngleRight /></button>
+            <div className="current-number">{showNum + 1}/{itemCount + 1}</div>
+        </div>
+    );
+}
 
-    SliderShow.propsTypes = {
-        height: PropTypes.string
-    }
+//子項目
+function Item({ classNames, children }) {
+    return (<div className={"card " + classNames}>
+        {children}
+    </div>)
+}
+
+SliderShow.propsTypes = {
+    height: PropTypes.string
+}
 
 
-    SliderShow.Item = Item
-    export default SliderShow;
+SliderShow.Item = Item
+export default SliderShow;

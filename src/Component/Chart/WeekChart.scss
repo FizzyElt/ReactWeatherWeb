@@ -7,3 +7,9 @@
 #mychat{
     position: relative;
 }
+@media screen and (max-width:450px){
+    .canvas-size{
+        width: 320px;
+        height: 250px;
+    }
+}

@@ -1,6 +1,8 @@
 ## 台灣天氣查詢網頁
 
-[作品網址](https://react-weather-web.netlify.com/#/36hours)
+[作品網址](https://react-weather-web.netlify.com/)
+
+![](./QRcode.png)
 
 ### 特點
 

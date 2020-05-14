@@ -3,8 +3,7 @@ import React, { useContext } from 'react';
 
 import SliderShow from '../Slider/SliderShow.jsx'
 import WeekWeatherCard from './WeekWeatherCard.jsx'
-import Loading from '../Loading/Loading.jsx'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group'
 
 import { LocationContext } from '../../Context/locationContext.js'
 import { WeekData } from '../../Context/weekDataContext.js'

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import './WeekWeatherCard.scss'
-import { FaTemperatureLow, FaTemperatureHigh, FaCloudSun } from 'react-icons/fa'
-import { GiDrop } from 'react-icons/gi'
+
+
 const WeekWeatherCard = ({
     startTime = "2020-01-01 00:00:00",
     endTime = "2020-01-01 00:00:00",

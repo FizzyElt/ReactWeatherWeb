@@ -72,24 +72,20 @@
 @media screen and (max-width:450px){
   .slider-container{
     .card.active-right {
-
-      transform: translateX(10%) scale(0.8);
-  
-      opacity: 0.6;
+      transform: translateX(100%);
+      opacity: 0;
     }
     .card.active-left {
+      transform: translateX(-100%);
 
-      transform: translateX(-10%) scale(0.8);
-      opacity: 0.6;
+      opacity: 0;
     }
     .card.hidden-right {
-
-      transform: translateX(20%) scale(0.6);
+      transform: translateX(0%);
       opacity: 0;
     }
     .card.hidden-left {
-
-      transform: translateX(-20%) scale(0.6);
+      transform: translateX(0%);
       opacity: 0;
     }
     .switch-btn.prev{

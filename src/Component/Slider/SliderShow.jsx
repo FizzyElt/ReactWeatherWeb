@@ -34,12 +34,12 @@ function useSliderShow(children, showNum) {
   if (itemCount > -1) {
     let list = Children.map(children, (item, i) => {
       //將子項目加工過後再render
+      let classNames = ''
       if (showNum - 2 <= i && i <= showNum + 2) {
-        const classNames = classNameCheck(i, showNum)
-        const props = { ...item.props, classNames: classNames }
-        return cloneElement(item, props)
+        const className = classNameCheck(i, showNum)
+        classNames = className
       }
-      return cloneElement(item)
+      return cloneElement(item, { ...item.props, classNames: classNames })
     })
     items = list
   }

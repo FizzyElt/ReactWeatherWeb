@@ -1,3 +1,3 @@
-import {createContext} from 'react'
+import { createContext } from 'react'
 
-export const WeekData=createContext([])
+export const WeekData = createContext([])

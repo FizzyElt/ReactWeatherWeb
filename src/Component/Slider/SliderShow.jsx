@@ -90,8 +90,13 @@ function Item({ classNames, children }) {
   return <div className={'card ' + classNames}>{children}</div>
 }
 
-SliderShow.propsTypes = {
+SliderShow.propTypes = {
+  children: PropTypes.element,
   height: PropTypes.string,
+}
+Item.propTypes = {
+  classNames: PropTypes.string,
+  children: PropTypes.element,
 }
 
 SliderShow.Item = Item

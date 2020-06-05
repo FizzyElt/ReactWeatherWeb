@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
-
+import React, { useState, useEffect, useContext } from 'react'
 
 import ContentTitle from '../../Component/ContentTitle/ContentTitle.jsx'
 import WeekWeather from '../../Component/WeekWeather/WeekWeather.jsx'
@@ -12,33 +11,35 @@ import './WeekContainer.scss'
 const { Content } = Layout
 
 const WeekContainer = () => {
-    const { currentLocation, setLoading } = useContext(LocationContext)
-    const [data, setData] = useState([]);
+  const { location, dispatch } = useContext(LocationContext)
+  const [data, setData] = useState([])
 
-    useEffect(() => {
-        setLoading(true)
-        getWeekData(currentLocation).then(res => {
-            setData(res)
-            setLoading(false)
-        }).catch(err => {
-            setLoading(false)
-        })
-    }, [currentLocation])
+  useEffect(() => {
+    dispatch({ type: 'SET_LOADING', payload: true })
+    getWeekData(location)
+      .then(res => {
+        setData(res)
+        dispatch({ type: 'SET_LOADING', payload: false })
+      })
+      .catch(() => {
+        dispatch({ type: 'SET_LOADING', payload: false })
+      })
+  }, [location, dispatch])
 
-
-    return (
-        <WeekData.Provider value={{
-            data: data,
-        }}>
-            <Content>
-                <div className="week-container">
-                    <ContentTitle title={"一周天氣預報"} />
-                    <WeekWeather />
-                    <WeekChart />
-                </div>
-            </Content>
-        </WeekData.Provider>
-    );
+  return (
+    <WeekData.Provider
+      value={{
+        data: data,
+      }}>
+      <Content>
+        <div className='week-container'>
+          <ContentTitle title={'一周天氣預報'} />
+          <WeekWeather />
+          <WeekChart />
+        </div>
+      </Content>
+    </WeekData.Provider>
+  )
 }
 
-export default WeekContainer;
+export default WeekContainer

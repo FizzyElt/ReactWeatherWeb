@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react'
 import Layout from 'antd/lib/layout/layout'
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 
@@ -13,47 +13,60 @@ import About from '../Container/About/About.jsx'
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
 import { DeviceWidthContext, defaultWidth } from '../Context/deviceWidthContext.js'
 
-const Home = () => {
-
-    const [currentLocation, setCurrentLocation] = useState(defaultLocation);
-    const [dataFetching, setDataFetching] = useState(true);
-
-    return (
-        <LocationContext.Provider value={{
-            currentLocation,
-            dataFetching,
-            setLocation: (name) => { setCurrentLocation(name) },
-            setLoading: (value) => { setDataFetching(value) }
-        }}>
-            <DeviceWidthContext.Provider value={{
-                isMobile: defaultWidth < 450
-            }}>
-                <HashRouter>
-                    <Layout>
-                        <Nav />
-                        <Layout>
-                            <Switch>
-                                <Route exact path="/">
-                                    <Redirect to={"/36hours"} />
-                                </Route>
-                                <Route path="/36hours">
-                                    <HoursContainer />
-                                </Route>
-                                <Route path="/week">
-                                    <WeekContainer />
-                                </Route>
-                                <Route path="/about">
-                                    <About />
-                                </Route>
-                            </Switch>
-
-                        </Layout>
-                        <FooterContainer />
-                    </Layout>
-                </HashRouter>
-            </DeviceWidthContext.Provider>
-        </LocationContext.Provider>
-    );
+const initState = {
+  location: defaultLocation,
+  loading: true,
 }
 
-export default Home;
+function reducer(state, action) {
+  switch (action.type) {
+    case 'SET_LOCATION':
+      return { ...state, location: action.payload }
+    case 'SET_LOADING':
+      return { ...state, loading: action.payload }
+    default:
+      return state
+  }
+}
+const Home = () => {
+  const [{ location, loading }, dispatch] = useReducer(reducer, initState)
+
+  return (
+    <LocationContext.Provider
+      value={{
+        location,
+        loading,
+        dispatch,
+      }}>
+      <DeviceWidthContext.Provider
+        value={{
+          isMobile: defaultWidth < 450,
+        }}>
+        <HashRouter>
+          <Layout>
+            <Nav />
+            <Layout>
+              <Switch>
+                <Route exact path='/'>
+                  <Redirect to={'/36hours'} />
+                </Route>
+                <Route path='/36hours'>
+                  <HoursContainer />
+                </Route>
+                <Route path='/week'>
+                  <WeekContainer />
+                </Route>
+                <Route path='/about'>
+                  <About />
+                </Route>
+              </Switch>
+            </Layout>
+            <FooterContainer />
+          </Layout>
+        </HashRouter>
+      </DeviceWidthContext.Provider>
+    </LocationContext.Provider>
+  )
+}
+
+export default Home

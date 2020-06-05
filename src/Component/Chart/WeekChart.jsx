@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useEffect } from 'react'
-import Chart,{defaults} from 'chart.js'
+import Chart, { defaults } from 'chart.js'
 import { WeekData } from '../../Context/weekDataContext.js'
 
 import './WeekChart.scss'
@@ -16,14 +16,14 @@ const obj = {
         label: 'MinT',
         borderColor: 'rgba(36, 167, 255,1)',
         backgroundColor: 'rgb(161, 198, 223)',
-        pointBackgroundColor:'#fff',
+        pointBackgroundColor: '#fff',
         data: [5, 6, 57, 6, 5],
       },
       {
         label: 'MaxT',
         borderColor: 'rgba(255,36,36,1)',
         backgroundColor: 'rgba(255, 130, 130,1)',
-        pointBackgroundColor:'#fff',
+        pointBackgroundColor: '#fff',
         data: [2, 46, 7, 8, 9],
       },
     ],

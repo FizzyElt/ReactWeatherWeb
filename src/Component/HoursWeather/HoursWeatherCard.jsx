@@ -5,7 +5,7 @@ import { FaUmbrella, FaTemperatureLow, FaCloudSun } from 'react-icons/fa'
 import '../../scss/animation.scss'
 import './HoursWeatherCard.scss'
 
-const numFormater = (num = '0') => {
+const numFormatter = (num = '0') => {
   //10以下補0
   return parseInt(num) < 10 ? '0' + num : num
 }
@@ -22,7 +22,7 @@ const HoursWeatherCard = ({
   return (
     <div className='hours-weather-card'>
       <img
-        src={`https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/${numFormater(Wx.value)}.svg`}
+        src={`https://www.cwb.gov.tw/V8/assets/img/weather_icons/weathers/svg_icon/day/${numFormatter(Wx.value)}.svg`}
         title={Wx.name}
       />
       <h4>{CI}</h4>

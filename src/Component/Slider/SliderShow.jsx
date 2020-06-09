@@ -11,29 +11,29 @@ function useSliderShow(children, showNum) {
 
   function classNameCheck(index, current) {
     //class切換
-    let classname = ''
+    let className = ''
     switch (index - current) {
       case 0:
-        classname = 'show-middle'
+        className = 'show-middle'
         break
       case -1:
-        classname = 'active-left'
+        className = 'active-left'
         break
       case 1:
-        classname = 'active-right'
+        className = 'active-right'
         break
       case -2:
-        classname = 'hidden-left'
+        className = 'hidden-left'
         break
       case 2:
-        classname = 'hidden-right'
+        className = 'hidden-right'
         break
     }
-    return classname
+    return className
   }
   if (itemCount > -1) {
     let list = Children.map(children, (item, i) => {
-      //將子項目加工過後再render
+      //將子項目帶入className過後再render
       let classNames = ''
       if (showNum - 2 <= i && i <= showNum + 2) {
         const className = classNameCheck(i, showNum)
@@ -48,7 +48,7 @@ function useSliderShow(children, showNum) {
 }
 
 const SliderShow = ({ children, height = '500px' }) => {
-  const [showNum, setShowNum] = useState(0)
+  const [showNum, setShowNum] = useState(0)  //顯示編號
   const { items, itemCount } = useSliderShow(children, showNum)
 
   function nextHandler() {

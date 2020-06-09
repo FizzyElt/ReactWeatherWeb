@@ -1,14 +1,14 @@
-.canvas-size{
+.canvas-size {
     position: relative;
     width: 1024px;
-    height:300px;
-    margin:40px auto;
+    height: 300px;
+    margin: 40px auto;
 }
-#mychat{
+#mychart {
     position: relative;
 }
-@media screen and (max-width:450px){
-    .canvas-size{
+@media screen and (max-width: 450px) {
+    .canvas-size {
         width: 320px;
         height: 250px;
     }

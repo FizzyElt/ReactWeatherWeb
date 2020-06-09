@@ -20,25 +20,25 @@
   .card.active-right {
     z-index: 1;
     left: 75%;
-    transform:translateX(-50%) scale(0.8);
+    transform: translateX(-50%) scale(0.8);
     opacity: 0.6;
   }
   .card.active-left {
     z-index: 1;
     left: 25%;
-    transform:translateX(-50%) scale(0.8);
+    transform: translateX(-50%) scale(0.8);
     opacity: 0.6;
   }
   .card.hidden-right {
     z-index: 1;
     left: 100%;
-    transform:translateX(-50%) scale(0.6);
+    transform: translateX(-50%) scale(0.6);
     opacity: 0;
   }
   .card.hidden-left {
     z-index: 1;
     left: 0%;
-    transform:translateX(-50%) scale(0.6);
+    transform: translateX(-50%) scale(0.6);
     opacity: 0;
   }
   .switch-btn {
@@ -72,9 +72,6 @@
     font-size: 20px;
     bottom: 0;
   }
-}
-.ss{
-  background-color: rgb(36, 167, 255);
 }
 @media screen and (max-width: 450px) {
   .slider-container {

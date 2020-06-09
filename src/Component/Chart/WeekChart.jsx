@@ -1,6 +1,7 @@
-import React, { useRef, useContext, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
+import PropTypes from 'prop-types'
+
 import Chart, { defaults } from 'chart.js'
-import { WeekData } from '../../Context/weekDataContext.js'
 
 import './WeekChart.scss'
 
@@ -50,10 +51,8 @@ function getDataset(data = [], label = '') {
   })
   return arr
 }
-const WeekChart = () => {
+const WeekChart = ({ data }) => {
   const chart = useRef(null)
-
-  const { data } = useContext(WeekData)
 
   useEffect(() => {
     const chartRef = chart.current.getContext('2d')
@@ -70,6 +69,10 @@ const WeekChart = () => {
       <canvas id='mychart' ref={chart}></canvas>
     </div>
   )
+}
+
+WeekChart.propTypes = {
+  data: PropTypes.array,
 }
 
 export default WeekChart

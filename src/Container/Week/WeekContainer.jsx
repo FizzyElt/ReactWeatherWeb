@@ -3,7 +3,6 @@ import React, { useState, useEffect, useContext } from 'react'
 import ContentTitle from '../../Component/ContentTitle/ContentTitle.jsx'
 import WeekWeather from '../../Component/WeekWeather/WeekWeather.jsx'
 import WeekChart from '../../Component/Chart/WeekChart.jsx'
-import { WeekData } from '../../Context/weekDataContext.js'
 import { LocationContext } from '../../Context/locationContext.js'
 import { getWeekData } from '../../fetchData.js'
 import Layout from 'antd/lib/layout/layout'
@@ -27,18 +26,13 @@ const WeekContainer = () => {
   }, [location, dispatch])
 
   return (
-    <WeekData.Provider
-      value={{
-        data: data,
-      }}>
-      <Content>
-        <div className='week-container'>
-          <ContentTitle title={'一周天氣預報'} />
-          <WeekWeather />
-          <WeekChart />
-        </div>
-      </Content>
-    </WeekData.Provider>
+    <Content>
+      <div className='week-container'>
+        <ContentTitle title={'一周天氣預報'} />
+        <WeekWeather data={data} />
+        <WeekChart data={data} />
+      </div>
+    </Content>
   )
 }
 

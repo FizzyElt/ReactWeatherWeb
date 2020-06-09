@@ -1,17 +1,16 @@
 import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
 
 import SliderShow from '../Slider/SliderShow.jsx'
 import WeekWeatherCard from './WeekWeatherCard.jsx'
 import { CSSTransition } from 'react-transition-group'
 
 import { LocationContext } from '../../Context/locationContext.js'
-import { WeekData } from '../../Context/weekDataContext.js'
 
 import '../../scss/animation.scss'
 
-const WeekWeather = () => {
+const WeekWeather = ({ data }) => {
   const { loading } = useContext(LocationContext)
-  const { data } = useContext(WeekData)
 
   const list = data.map((obj, i) => {
     return (
@@ -30,6 +29,10 @@ const WeekWeather = () => {
   } else {
     return null
   }
+}
+
+WeekWeather.propTypes = {
+  data: PropTypes.array.isRequired,
 }
 
 export default WeekWeather

@@ -66,13 +66,7 @@ module.exports = {
             options: {
               //prependData:`@import "${path.resolve(__dirname,'src/scss/index.scss')}";`
             },
-          },
-          {
-            loader: 'sass-resources-loader', //共用scss檔
-            options: {
-              resources: './src/scss/index.scss',
-            },
-          },
+          }
         ],
       },
       {

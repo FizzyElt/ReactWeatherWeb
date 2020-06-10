@@ -1,28 +1,46 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { Row, Col } from 'antd/lib/grid'
 
+//component
 import HoursWeatherCard from './HoursWeatherCard.jsx'
 
+//context
 import { LocationContext } from '../../Context/locationContext.js'
 import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import '../../scss/animation.scss'
 
 const HoursWeather = ({ data }) => {
   const { loading } = useContext(LocationContext)
   const { isMobile } = useContext(DeviceWidthContext)
-  //const [data, setData] = useState([])
+
+  const [lazy, setLazy] = useState(true)
+  const firstFetch = useRef(true) //畫面切換首次拿取資料
+
+  useEffect(() => {
+    if (!loading) {
+      setLazy(true)
+    } else {
+      if (firstFetch.current) {
+        firstFetch.current = false
+      } else {
+        setLazy(false)
+      }
+    }
+  }, [loading])
 
   const list = (() => {
     if (isMobile) {
       return data.map((obj, i) => {
         return (
           <Row type='flex' key={i}>
-            <CSSTransition in={!loading} appear={false} classNames='animate-fade' timeout={1000}>
-              <HoursWeatherCard {...obj} />
-            </CSSTransition>
+            <SwitchTransition>
+              <CSSTransition key={lazy} classNames='animate-fade' timeout={1000}>
+                <HoursWeatherCard {...obj} />
+              </CSSTransition>
+            </SwitchTransition>
           </Row>
         )
       })
@@ -30,9 +48,11 @@ const HoursWeather = ({ data }) => {
       return data.map((obj, i) => {
         return (
           <Col span={8} key={i}>
-            <CSSTransition in={!loading} appear={false} classNames='animate-fade' timeout={1000}>
-              <HoursWeatherCard {...obj} />
-            </CSSTransition>
+            <SwitchTransition>
+              <CSSTransition key={lazy} classNames='animate-fade' timeout={1000}>
+                <HoursWeatherCard {...obj} />
+              </CSSTransition>
+            </SwitchTransition>
           </Col>
         )
       })

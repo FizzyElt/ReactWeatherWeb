@@ -91,7 +91,7 @@ function Item({ classNames, children }) {
 }
 
 SliderShow.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.array,
   height: PropTypes.string,
 }
 Item.propTypes = {

@@ -5,7 +5,7 @@ import { HashRouter, Route, Redirect, Switch } from 'react-router-dom'
 //component
 import Nav from '../Container/Nav/Nav.jsx'
 import HoursContainer from '../Container/Hours/HoursContainer.jsx'
-import FooterContainer from '../Container/Footer/FooterContainer.jsx'
+import Footer from '../Container/Footer/Footer.jsx'
 import WeekContainer from '../Container/Week/WeekContainer.jsx'
 import About from '../Container/About/About.jsx'
 
@@ -61,7 +61,7 @@ const Home = () => {
                 </Route>
               </Switch>
             </Layout>
-            <FooterContainer />
+            <Footer />
           </Layout>
         </HashRouter>
       </DeviceWidthContext.Provider>

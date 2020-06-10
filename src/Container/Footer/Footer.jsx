@@ -4,9 +4,9 @@ import { Row, Col } from 'antd/lib/grid'
 import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 
 import { FaMedium, FaGithub, FaFacebookSquare, FaLinkedin } from 'react-icons/fa'
-import './FooterContainer.scss'
+import './Footer.scss'
 
-const FooterContainer = () => {
+const Footer = () => {
   const { isMobile } = useContext(DeviceWidthContext)
 
   const list = isMobile ? (
@@ -94,4 +94,4 @@ const FooterContainer = () => {
   )
 }
 
-export default FooterContainer
+export default Footer

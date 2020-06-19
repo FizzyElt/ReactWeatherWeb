@@ -44,7 +44,7 @@
 npm install
 ```
 
-要正常使用請先到[氣象局資料開份平台](https://opendata.cwb.gov.tw/index)申請 Token
+要正常使用請先到[氣象局資料開放平台](https://opendata.cwb.gov.tw/index)申請 Token
 
 在 src 資料夾內新增 apiToken.js 檔案撰寫以下內容
 

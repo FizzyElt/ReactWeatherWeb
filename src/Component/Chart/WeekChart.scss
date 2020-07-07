@@ -7,6 +7,18 @@
 #mychart {
     position: relative;
 }
+@media screen and (max-width: 1025px) {
+    .canvas-size {
+        width: 800px;
+        height: 300px;
+    }
+}
+@media screen and (max-width: 770px) {
+    .canvas-size {
+        width: 680px;
+        height: 280px;
+    }
+}
 @media screen and (max-width: 450px) {
     .canvas-size {
         width: 320px;

@@ -40,7 +40,7 @@ const Home = () => {
       }}>
       <DeviceWidthContext.Provider
         value={{
-          isMobile: defaultWidth < 450,
+          isMobile: defaultWidth < 769,
         }}>
         <HashRouter>
           <Layout>

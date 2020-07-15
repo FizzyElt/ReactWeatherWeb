@@ -8,6 +8,7 @@ import HoursContainer from '../Container/Hours/HoursContainer.jsx'
 import Footer from '../Container/Footer/Footer.jsx'
 import WeekContainer from '../Container/Week/WeekContainer.jsx'
 import About from '../Container/About/About.jsx'
+import Covid19 from '../Container/Covid19/Covid19.jsx'
 
 //context
 import { LocationContext, defaultLocation } from '../Context/locationContext.js'
@@ -58,6 +59,9 @@ const Home = () => {
                 </Route>
                 <Route path='/about'>
                   <About />
+                </Route>
+                <Route path='/covid19'>
+                  <Covid19/>
                 </Route>
               </Switch>
             </Layout>

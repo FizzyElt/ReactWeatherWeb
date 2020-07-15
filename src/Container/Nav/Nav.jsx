@@ -16,6 +16,7 @@ const { SubMenu } = Menu
 const navItems = [
   { path: '/36hours', name: '36小時' },
   { path: '/week', name: '一周天氣' },
+  { path: '/covid19', name: '疫情資訊' },
   { path: '/about', name: '關於' },
 ]
 

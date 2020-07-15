@@ -4,6 +4,7 @@ import { Token } from './apiToken.js'
 const hoursUrl = `https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001`
 const weekUrl =
   'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-091?elementName=MinT&elementName=MaxT&elementName=MinAT&elementName=MaxAT&elementName=Wx&elementName=RH'
+const covidUrl = 'https://covid19.mathdro.id/api/'
 export const getHoursData = location => {
   /**
    * {
@@ -114,6 +115,42 @@ export const getWeekData = location => {
       })
       .catch(err => {
         console.log(err)
+        reject(err)
+      })
+  })
+}
+
+export const getCovid19All = () => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(covidUrl)
+      .then(res => {
+        const obj = {
+          confirmed: res.data.confirmed.value,
+          recovered: res.data.recovered.value,
+          deaths: res.data.deaths.value,
+        }
+        resolve(obj)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}
+
+export const getCovid19TW = country => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(covidUrl + 'countries/' + country)
+      .then(res => {
+        const obj = {
+          confirmed: res.data.confirmed.value,
+          recovered: res.data.recovered.value,
+          deaths: res.data.deaths.value,
+        }
+        resolve(obj)
+      })
+      .catch(err => {
         reject(err)
       })
   })

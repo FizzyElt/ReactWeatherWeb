@@ -4,4 +4,14 @@
     width: 1080px;
     padding: 0;
     min-height: calc(100vh - 60px - 70px);
+    a{
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (max-width:1025px){
+    .covid19-content{
+        width: 100%;
+        padding: 0 20px;
+    }
 }

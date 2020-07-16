@@ -2,15 +2,18 @@ import React, { useEffect, useState, useContext } from 'react'
 
 import { getCovid19All, getCovid19TW } from '../../fetchData.js'
 
+//context
 import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 
+//component
 import Covid19Card from '../../Component/Covid19Card/Covid19Card.jsx'
-import './Covid19.scss'
+
 import Layout from 'antd/lib/layout/layout'
 import { Row, Col } from 'antd/lib/grid'
+import './Covid19.scss'
+
 const { Content } = Layout
 
-//TODO mobile UI
 const Covid19 = () => {
   const [covidWorld, setCovidWorld] = useState({})
   const [covidTW, setCovidTW] = useState({})

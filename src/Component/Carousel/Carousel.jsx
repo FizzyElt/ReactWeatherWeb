@@ -3,9 +3,9 @@ import React, { useState, cloneElement, Children } from 'react'
 import PropTypes from 'prop-types'
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
-import './SliderShow.scss'
+import './Carousel.scss'
 
-function useSliderShow(children, showNum) {
+function useCarousel(children, showNum) {
   let items = []
   const [itemCount] = useState(Children.count(children) - 1)
 
@@ -47,9 +47,9 @@ function useSliderShow(children, showNum) {
   return { items, itemCount }
 }
 
-const SliderShow = ({ children, height = '500px' }) => {
+const Carousel = ({ children, height = '500px' }) => {
   const [showNum, setShowNum] = useState(0)  //顯示編號
-  const { items, itemCount } = useSliderShow(children, showNum)
+  const { items, itemCount } = useCarousel(children, showNum)
 
   function nextHandler() {
     setShowNum(prev => {
@@ -90,7 +90,7 @@ function Item({ classNames, children }) {
   return <div className={'card ' + classNames}>{children}</div>
 }
 
-SliderShow.propTypes = {
+Carousel.propTypes = {
   children: PropTypes.array,
   height: PropTypes.string,
 }
@@ -99,5 +99,5 @@ Item.propTypes = {
   children: PropTypes.element,
 }
 
-SliderShow.Item = Item
-export default SliderShow
+Carousel.Item = Item
+export default Carousel

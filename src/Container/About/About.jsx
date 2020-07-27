@@ -19,7 +19,7 @@ const obj = [
   },
   {
     title: '作品重點',
-    content: '自製Slider組件、Webpack設定檔撰寫、串接氣象局API',
+    content: '自製 Carousel 組件、Webpack設定檔撰寫、串接氣象局API',
   },
 ]
 

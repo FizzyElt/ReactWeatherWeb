@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 //component
-import SliderShow from '../Slider/SliderShow.jsx'
+import Carousel from '../Carousel/Carousel.jsx'
 import WeekWeatherCard from './WeekWeatherCard.jsx'
 
 //context
@@ -31,9 +31,9 @@ const WeekWeather = ({ data }) => {
 
   const list = data.map((obj, i) => {
     return (
-      <SliderShow.Item key={i}>
+      <Carousel.Item key={i}>
         <WeekWeatherCard {...obj} />
-      </SliderShow.Item>
+      </Carousel.Item>
     )
   })
 
@@ -41,7 +41,7 @@ const WeekWeather = ({ data }) => {
     return (
       <SwitchTransition>
         <CSSTransition key={lazy} classNames='fade-up' timeout={600} in={!loading}>
-          <SliderShow>{list}</SliderShow>
+          <Carousel>{list}</Carousel>
         </CSSTransition>
       </SwitchTransition>
     )

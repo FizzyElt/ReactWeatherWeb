@@ -14,7 +14,7 @@
 
 ### 特點
 
-- 自製 Slider 組件
+- 自製 Carousel 組件
 - 自行撰寫 webpack 設定檔
 
 ---

@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
+const BundleAnalyzer=require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const devMode = process.env.NODE_ENV === 'development' //模式判斷
 
 module.exports = {
@@ -24,6 +25,11 @@ module.exports = {
       chunkFilename: devMode ? './css/[id].css' : './css/[name].[hash].css',
     }),
     new CleanWebpackPlugin(), //用系統管理員執行vscode才能正常運作
+    new BundleAnalyzer({
+      analyzerMode:'static',
+      reportFilename:'report.html',
+      openAnalyzer:true
+    })
   ],
   module: {
     rules: [

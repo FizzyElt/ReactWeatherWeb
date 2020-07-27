@@ -8,7 +8,7 @@ import { LocationContext } from '../../Context/locationContext.js'
 import { getHoursData } from '../../fetchData.js'
 
 //layout
-import Layout from 'antd/lib/layout/layout'
+import { Layout } from '../../AntDesign/layout.js'
 import './HoursContainer.scss'
 
 const { Content } = Layout

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Typography, Divider } from 'antd/es'
+import { Typography, Divider } from '../../AntDesign/component.js'
 import './About.scss'
 const { Title } = Typography
 

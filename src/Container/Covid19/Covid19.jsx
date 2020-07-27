@@ -8,8 +8,7 @@ import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 //component
 import Covid19Card from '../../Component/Covid19Card/Covid19Card.jsx'
 
-import Layout from 'antd/lib/layout/layout'
-import { Row, Col } from 'antd/lib/grid'
+import { Layout, Row, Col } from '../../AntDesign/layout.js'
 import './Covid19.scss'
 
 const { Content } = Layout

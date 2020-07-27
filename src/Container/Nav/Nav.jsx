@@ -3,8 +3,8 @@ import React, { useContext } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
-import Layout from 'antd/lib/layout/layout'
-import { Typography, Menu } from 'antd/es'
+import { Layout } from '../../AntDesign/layout.js'
+import { Typography, Menu } from '../../AntDesign/component.js'
 import { TiWeatherSunny } from 'react-icons/ti' //icon
 import { FaBars } from 'react-icons/fa'
 import './Nav.scss'

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Select } from 'antd/es'
+import { Select } from '../../AntDesign/component.js'
 
 //Context
 import { LocationContext } from '../../Context/locationContext.js'

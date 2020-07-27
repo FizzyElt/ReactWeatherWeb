@@ -5,7 +5,7 @@ import WeekWeather from '../../Component/WeekWeather/WeekWeather.jsx'
 import WeekChart from '../../Component/Chart/WeekChart.jsx'
 import { LocationContext } from '../../Context/locationContext.js'
 import { getWeekData } from '../../fetchData.js'
-import Layout from 'antd/lib/layout/layout'
+import { Layout } from '../../AntDesign/layout.js'
 import './WeekContainer.scss'
 const { Content } = Layout
 

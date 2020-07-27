@@ -9,8 +9,8 @@ import { LocationContext } from '../../Context/locationContext.js'
 import { DeviceWidthContext } from '../../Context/deviceWidthContext.js'
 
 //layout
-import { Row, Col } from 'antd/lib/grid'
-import { Typography } from 'antd/es'
+import { Row, Col } from '../../AntDesign/layout.js'
+import { Typography } from '../../AntDesign/component.js'
 
 const { Title } = Typography
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Typography } from 'antd'
+import { Typography } from '../../AntDesign/component.js'
 import './Covid19Card.scss'
 
 const { Title } = Typography

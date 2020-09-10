@@ -1,12 +1,14 @@
-.covid19-card{
+.covid19-card {
     margin: 10px;
-    border:3px solid #7c4efc;
-    border-radius: 10px;
     padding: 10px 20px;
-    .title{
+    border: 3px solid #7c4efc;
+    border-radius: 10px;
+
+    .title {
         color: #00a51b;
     }
-    .font-color{
+
+    .font-color {
         color: #005a83;
     }
 }

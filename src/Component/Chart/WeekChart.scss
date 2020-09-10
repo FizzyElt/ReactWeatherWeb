@@ -1,12 +1,14 @@
 .canvas-size {
     position: relative;
+    margin: 40px auto;
     width: 1024px;
     height: 300px;
-    margin: 40px auto;
+
+    canvas {
+        position: relative;
+    }
 }
-#mychart {
-    position: relative;
-}
+
 @media screen and (max-width: 1025px) {
     .canvas-size {
         width: 800px;

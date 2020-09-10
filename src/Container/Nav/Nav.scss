@@ -1,26 +1,29 @@
-.nav{
-    height: 100%;
+.nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    height: 100%;
 }
-.nav .title{
+
+.nav .title {
     display: flex;
     align-items: center;
     margin: 0;
-    color: white;
+    color: rgb(255, 255, 255);
 }
-.nav .icon{
+
+.nav .icon {
     font-size: 50px;
-    color: white;
+    color: rgb(255, 255, 255);
 }
-@media screen and (max-width:450px){
-    .nav{
+@media screen and (max-width: 450px) {
+    .nav {
         padding: 0 20px;
     }
-    .nav .icon{
+
+    .nav .icon {
         font-size: 30px;
-        color: white;
+        color: rgb(255, 255, 255);
     }
 }

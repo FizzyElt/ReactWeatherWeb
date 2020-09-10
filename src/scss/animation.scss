@@ -2,15 +2,18 @@
   opacity: 0;
   transform: scale(0.8) translateY(50px);
 }
+
 .animate-fade-enter-active {
   opacity: 1;
   transform: scale(1) translateY(0);
   transition: opacity 400ms linear, transform 400ms ease-in-out;
 }
+
 .animate-fade-exit {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
+
 .animate-fade-exit-active {
   opacity: 0;
   transform: scale(0.8) translateY(50px);
@@ -24,13 +27,15 @@
 
 .fade-up-enter-active {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(0);
   transition: opacity 400ms linear, transform 400ms ease-in-out;
 }
+
 .fade-up-exit {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(0);
 }
+
 .fade-up-exit-active {
   opacity: 0;
   transform: translateY(60px);

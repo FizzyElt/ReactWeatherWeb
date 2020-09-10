@@ -5,36 +5,42 @@
   min-height: 300px;
   border-radius: 10px;
   box-shadow: 10px 10px 20px 1px #4d4d4d;
+
   img {
     display: block;
+    margin: 0 auto 30px;
     width: 120px;
     height: 120px;
-    margin: 0px auto 30px auto;
   }
+
   .icon {
-    font-size: 25px;
     margin-right: 10px;
+    font-size: 25px;
   }
+
   h4 {
     display: flex;
-    border-radius: 6px;
     align-items: center;
     text-align: left;
-    line-height: 1.5;
+    border-radius: 6px;
     transition: 0.2s;
+    line-height: 1.5;
     cursor: pointer;
   }
+
   h4:first-of-type {
     display: block;
-    font-size: 25px;
-    text-align: center;
     margin-top: 20px;
+    font-size: 25px;
     font-weight: 600;
+    text-align: center;
   }
+
   h4:hover {
     color: #ffce47;
     background-color: #004353;
   }
+
   h5 {
     margin: 0;
   }
@@ -42,9 +48,9 @@
 
 @media screen and (max-width: 1025px) {
   .hours-weather-card {
+    margin: 10px;
     padding: 15px 10px;
     width: 300px;
     min-height: 280px;
-    margin: 10px 10px;
   }
 }

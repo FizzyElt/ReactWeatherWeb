@@ -1,17 +1,19 @@
 .loading {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     min-height: 200px;
     background-color: transparent;
+
     .circle1,
     .circle2 {
         position: absolute;
         display: block;
         border-radius: 50%;
     }
+
     .circle1 {
         width: 100px;
         height: 100px;
@@ -22,6 +24,7 @@
         border-right: 10px solid transparent;
         animation: ClockwiseRotation 1.5s linear infinite;
     }
+
     .circle2 {
         width: 150px;
         height: 150px;
@@ -37,6 +40,7 @@
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
@@ -45,6 +49,7 @@
     0% {
         transform: rotate(360deg);
     }
+
     100% {
         transform: rotate(0deg);
     }

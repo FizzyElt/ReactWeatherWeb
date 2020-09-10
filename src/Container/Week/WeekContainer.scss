@@ -1,20 +1,20 @@
-.week-container{
-    margin:30px auto;
-    width: 1080px;
-    text-align: center;
+.week-container {
+    margin: 30px auto;
     padding: 0;
+    width: 1080px;
     min-height: calc(100vh - 60px - 70px);
+    text-align: center;
 }
 
-@media screen and(max-width:1025px){
-    .week-container{
-        padding:0 20px;
+@media screen and(max-width: 1025px) {
+    .week-container {
+        padding: 0 20px;
         width: 100%;
     }
 }
 
-@media screen and (max-width:450px){
-    .week-container{
-        width:100%;
+@media screen and (max-width: 450px) {
+    .week-container {
+        width: 100%;
     }
 }

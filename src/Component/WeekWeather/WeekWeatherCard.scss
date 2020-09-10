@@ -1,19 +1,22 @@
 .week-weather-card {
   position: relative;
-  width: 320px;
-  background-color: #ffffff;
-  border-radius: 8px;
   padding: 20px 10px;
+  width: 320px;
+  background-color: #fff;
+  border-radius: 8px;
+
   img {
     display: block;
-    margin: 10px auto 30px auto;
+    margin: 10px auto 30px;
   }
+
   h4 {
     font-size: 20px;
     text-align: left;
     border-radius: 6px;
     transition: all 0.3s;
   }
+
   h4:hover {
     color: #ffce47;
     background-color: #004353;

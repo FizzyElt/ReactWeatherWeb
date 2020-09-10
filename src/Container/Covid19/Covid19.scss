@@ -1,16 +1,18 @@
 .covid19-content {
-    margin:30px auto;
-    width: 1080px;
+    margin: 30px auto;
     padding: 0;
+    width: 1080px;
     min-height: calc(100vh - 60px - 70px);
-    a{
+
+    a {
         word-wrap: break-word;
     }
 }
 
-@media screen and (max-width:1025px){
-    .covid19-content{
-        width: 100%;
+@media screen and (max-width: 1025px) {
+    .covid19-content {
         padding: 0 20px;
+        width: 100%;
     }
+    
 }

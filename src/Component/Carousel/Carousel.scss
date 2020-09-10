@@ -1,76 +1,87 @@
 .slider-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+
   .card {
     position: absolute;
-    z-index: 1;
     opacity: 0;
-    transform: translateX(-50%);
+    z-index: 1;
     transition: all 0.5s;
+    transform: translateX(-50%);
   }
+
   .card.show-middle {
-    z-index: 2;
     left: 50%;
     opacity: 1;
+    z-index: 2;
   }
+
   .card.active-right {
-    z-index: 1;
     left: 75%;
-    transform: translateX(-50%) scale(0.8);
     opacity: 0.6;
+    z-index: 1;
+    transform: translateX(-50%) scale(0.8);
   }
+
   .card.active-left {
-    z-index: 1;
     left: 25%;
-    transform: translateX(-50%) scale(0.8);
     opacity: 0.6;
+    z-index: 1;
+    transform: translateX(-50%) scale(0.8);
   }
+
   .card.hidden-right {
-    z-index: 1;
     left: 100%;
-    transform: translateX(-50%) scale(0.6);
     opacity: 0;
-  }
-  .card.hidden-left {
     z-index: 1;
-    left: 0%;
     transform: translateX(-50%) scale(0.6);
-    opacity: 0;
   }
+
+  .card.hidden-left {
+    left: 0%;
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(-50%) scale(0.6);
+  }
+
   .switch-btn {
-    cursor: pointer;
-    outline: none;
     position: absolute;
-    z-index: 5;
-    border-radius: 50%;
-    background-color: #3b3b3b;
-    border: none;
     width: 50px;
     height: 50px;
     font-size: 40px;
     text-align: center;
-    line-height: 0;
-    color: white;
+    color: rgb(255, 255, 255);
+    background-color: #3b3b3b;
+    border-style: none;
+    border-radius: 50%;
+    outline: none;
+    z-index: 5;
     transition: all 0.3s;
+    cursor: pointer;
+    line-height: 0;
   }
+
   .switch-btn:hover {
-    background-color: #afafaf;
     color: rgb(48, 48, 48);
+    background-color: #afafaf;
   }
+
   .switch-btn.prev {
     left: 0;
   }
+
   .switch-btn.next {
     right: 0;
   }
+
   .current-number {
     position: absolute;
-    font-size: 20px;
     bottom: 0;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 450px) {
@@ -79,23 +90,27 @@
       transform: translateX(100%);
       opacity: 0;
     }
+
     .card.active-left {
       transform: translateX(-100%);
-
       opacity: 0;
     }
+
     .card.hidden-right {
       transform: translateX(0%);
       opacity: 0;
     }
+
     .card.hidden-left {
       transform: translateX(0%);
       opacity: 0;
     }
+
     .switch-btn.prev {
       bottom: 0;
       left: 10px;
     }
+
     .switch-btn.next {
       bottom: 0;
       right: 10px;

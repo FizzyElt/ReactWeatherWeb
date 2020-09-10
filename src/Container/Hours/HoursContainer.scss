@@ -1,12 +1,12 @@
-.hours-content{
-    margin:30px auto;
-    width: 1080px;
-    text-align: center;
+.hours-content {
+    margin: 30px auto;
     padding: 0;
+    width: 1080px;
     min-height: calc(100vh - 60px - 70px);
+    text-align: center;
 }
-@media screen and (max-width:1025px){
-    .hours-content{
+@media screen and (max-width: 1025px) {
+    .hours-content {
         width: 100%;
     }
 }

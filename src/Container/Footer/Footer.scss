@@ -1,24 +1,28 @@
-.footer-container{
+.footer-container {
     display: block;
-    padding: 20px 25px 0px 25px;
-    background-color: #001529;
+    padding: 20px 25px 0;
     color: #797979;
-    h5{
+    background-color: #001529;
+
+    h5 {
         font-size: 18px;
         color: #797979;
     }
-    .link-list{
+
+    .link-list {
         display: flex;
-        li{
+
+        li {
             margin-right: 30px;
         }
         
-        .icon{
-            transition: color 200ms;
+        .icon {
             font-size: 25px;
             color: #797979;
+            transition: color 200ms;
         }
-        .icon:hover{
+
+        .icon:hover {
             color: #2bd5ff;
         }
     }
